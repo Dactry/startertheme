@@ -1,0 +1,11 @@
+.bg {
+  &-primary {
+    background: var(--color-primary);
+  }
+  &-surface {
+    background: var(--color-surface);
+  }
+  &-dark {
+    background: var(--color-dark);
+  }
+}

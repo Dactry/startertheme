@@ -1,0 +1,28 @@
+#customer_login {
+  h2 {
+    margin: 0;
+  }
+  &.u-columns {
+    display: flex;
+    flex-direction: column;
+    gap: var(--container-spacer);
+    @include bp(md) {
+      flex-direction: row;
+      .col-1,
+      .col-2 {
+        flex: 1 0 0%;
+      }
+      .col-1 {
+        padding-top: var(--spacer-3);
+      }
+    }
+
+    .col-2 {
+      padding: var(--spacer-4);
+      background-color: var(--color-surface);
+    }
+  }
+  .register .form-row:last-child {
+    margin-bottom: 0;
+  }
+}

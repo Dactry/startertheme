@@ -1,0 +1,14 @@
+.icon-label {
+  --icon-color: var(--color-primary);
+  display: inline-flex;
+  gap: var(--element-spacer-sm);
+  align-items: center;
+  @include underline--reverse;
+  .site-icon {
+    transition: color var(--transition);
+  }
+  &:hover {
+    --icon-color: var(--color-white);
+    --icon-background-color: var(--color-primary);
+  }
+}

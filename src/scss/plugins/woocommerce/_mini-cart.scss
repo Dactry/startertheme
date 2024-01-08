@@ -1,0 +1,109 @@
+.custom-mini-cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  padding: 0 var(--container-spacer) var(--container-spacer);
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform var(--transition);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+
+  @include bp(md) {
+    max-width: 600px;
+  }
+
+  &--visible {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--header-height);
+    &-title {
+      font-size: 1em;
+      margin: 0;
+    }
+  }
+
+  &__counter {
+    --counter-size: 1.75em;
+    color: var(--color-white);
+    background: var(--color-primary);
+    min-width: var(--counter-size);
+    min-height: var(--counter-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: var(--lh-none);
+    border-radius: 50rem;
+    font-size: var(--fs-xs);
+  }
+
+  .widget_shopping_cart_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+  }
+
+  .woocommerce-mini-cart {
+    @include reset-list;
+    overflow: auto;
+    margin: 0;
+    display: block;
+    flex: 1;
+    overscroll-behavior: contain;
+    .quantity {
+      display: block;
+      font-size: var(--fs-xs);
+    }
+    &__total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: var(--element-spacer) 0;
+      border-top: var(--border-width) solid var(--color-border);
+    }
+    &__buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin: 0;
+      .button {
+        flex-grow: 1;
+      }
+      .button:not(.checkout):not(:hover) {
+        @include button--outline;
+      }
+    }
+  }
+
+  .mini_cart_item {
+    overflow: hidden;
+    position: relative;
+    padding: 1em 2em 1em 4em;
+    border-top: var(--border-width) solid var(--color-border);
+    &:first-child {
+      margin-top: 0;
+    }
+    img {
+      max-width: 3em;
+      display: block;
+      position: absolute;
+      top: 1em;
+      left: 0;
+    }
+  }
+}

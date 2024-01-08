@@ -1,0 +1,18 @@
+.site-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--icon-color);
+  display: inline-flex;
+  flex: 0 0 auto;
+  &-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-holder-size);
+    height: var(--icon-holder-size);
+    background-color: var(--icon-background-color);
+    border-radius: 100%;
+    flex-shrink: 0;
+    transition: background-color var(--transition);
+  }
+}

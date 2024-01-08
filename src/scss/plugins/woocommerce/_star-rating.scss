@@ -1,0 +1,99 @@
+$star-size: 1em;
+.star-rating {
+  overflow: hidden;
+  position: relative;
+  height: $star-size;
+  font-size: $star-size;
+  line-height: var(--lh-none);
+  width: 5.3em;
+  color: var(--link-color);
+  font-family: star;
+  font-weight: normal;
+
+  &::before {
+    content: "\53\53\53\53\53";
+    opacity: 0.25;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  span {
+    overflow: hidden;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: $star-size;
+  }
+
+  span::before {
+    content: "\53\53\53\53\53";
+    top: 0;
+    position: absolute;
+    left: 0;
+    color: inherit;
+  }
+}
+
+p.stars {
+  span {
+    font-size: $star-size;
+    display: flex;
+  }
+  a {
+    position: relative;
+    height: 1em;
+    width: 1em;
+    text-indent: -999em;
+    display: inline-block;
+    text-decoration: none;
+
+    &::before {
+      content: "\53";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1em;
+      height: 1em;
+      line-height: var(--lh-none);
+      font-family: star;
+      text-indent: 0;
+      opacity: 0.25;
+    }
+
+    &:hover {
+      ~ a::before {
+        opacity: 0.25;
+      }
+    }
+  }
+
+  &:hover {
+    a {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.selected {
+    a.active {
+      &::before {
+        opacity: 1;
+      }
+
+      ~ a::before {
+        opacity: 0.25;
+      }
+    }
+
+    a:not(.active) {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}

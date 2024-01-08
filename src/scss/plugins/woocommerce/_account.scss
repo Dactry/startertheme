@@ -1,0 +1,76 @@
+.woocommerce-account.logged-in {
+  .woocommerce {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--container-spacer);
+    .woocommerce-MyAccount-content,
+    .woocommerce-MyAccount-navigation {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @include bp(md) {
+      .woocommerce-MyAccount-navigation {
+        flex: 0 0 auto;
+        width: 25%;
+      }
+      .woocommerce-MyAccount-content {
+        flex: 1 0 0%;
+      }
+    }
+  }
+}
+
+.woocommerce-MyAccount-navigation {
+  ul {
+    @include reset-list;
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    li {
+      border-top: var(--border-width) solid var(--color-border);
+      margin: 0;
+      &:first-child {
+        border-top: none;
+      }
+    }
+    a {
+      @include underline--reverse;
+      display: block;
+      color: inherit;
+      padding: var(--element-spacer-sm) var(--element-spacer);
+      transition: text-decoration-color var(--transition), background-color var(--transition), color var(--transition);
+    }
+    li:not(.is-active) > a:hover {
+      background-color: var(--color-surface);
+    }
+    li.is-active {
+      a {
+        color: var(--color-white);
+        background: var(--color-primary);
+      }
+    }
+  }
+}
+
+.woocommerce-Address-title {
+  .edit {
+    @include button;
+    &:not(:hover) {
+      @include button--outline;
+    }
+  }
+}
+
+.woocommerce-Address {
+  padding: 1rem 0;
+  border-bottom: var(--border-width) solid var(--color-border);
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+    border: none;
+  }
+}

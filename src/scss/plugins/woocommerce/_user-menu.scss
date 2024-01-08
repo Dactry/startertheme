@@ -1,0 +1,7 @@
+.user-menu {
+  --icon-size: 1.25em;
+  gap: var(--element-spacer);
+  > li {
+    min-height: var(--header-height);
+  }
+}

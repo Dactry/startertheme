@@ -1,0 +1,23 @@
+.text {
+  &-primary {
+    color: var(--color-primary);
+  }
+  &-muted {
+    color: var(--color-text-muted);
+  }
+  &-white {
+    --color-border: var(--color-text-muted);
+    --color-text-muted: var(--color-white-muted);
+    --input-border-color: var(--color-white-muted);
+    --input-border-color-hover: var(--color-white);
+    --input-border-color-focus: var(--color-white);
+
+    color: var(--color-white);
+    a:not([class]) {
+      color: inherit;
+    }
+    select {
+      background-image: var(--icon-light);
+    }
+  }
+}

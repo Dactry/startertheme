@@ -1,0 +1,141 @@
+table.shop_table_responsive {
+  .actions {
+    text-align: left;
+  }
+
+  .coupon {
+    display: flex;
+    gap: 0.75em;
+    flex-direction: column;
+    font-size: var(--fs-sm);
+    padding: 0.75em;
+    background-color: var(--color-surface);
+    label {
+      font-weight: bold;
+    }
+    .button {
+      white-space: nowrap;
+      &:not(:hover) {
+        @include button--outline;
+      }
+    }
+  }
+
+  .woocommerce-shipping-totals {
+    vertical-align: top;
+  }
+
+  [name="update_cart"] {
+    margin-top: 2rem;
+    &:not(:hover) {
+      @include button--outline;
+    }
+  }
+
+  @include bp(md, max) {
+    .product-remove {
+      padding-bottom: 0;
+      float: right;
+      &:before {
+        display: none;
+      }
+    }
+    .product-thumbnail {
+      width: 40%;
+      float: left;
+      clear: none;
+      &:before {
+        display: none;
+      }
+    }
+
+    .product-quantity {
+      .quantity {
+        float: right;
+      }
+    }
+
+    thead {
+      display: none;
+    }
+
+    tbody {
+      th {
+        display: none;
+      }
+    }
+
+    td,
+    th {
+      padding: 0.25em 0;
+    }
+
+    tr {
+      display: block;
+      padding: 1em 0;
+      td {
+        display: block;
+        text-align: right;
+        clear: both;
+
+        &::before {
+          font-weight: bold;
+          content: attr(data-title);
+          float: left;
+          padding: 0 0.5em 0.5em 0;
+        }
+
+        &.actions,
+        &.download-actions {
+          &::before {
+            display: none;
+          }
+        }
+
+        &.download-actions {
+          .button {
+            display: block;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .woocommerce-shipping-totals td {
+      text-align: left;
+      &:before {
+        display: block;
+        float: none;
+      }
+    }
+  }
+
+  @include bp(md) {
+    .product-thumbnail {
+      width: 75px;
+      padding-right: 1em;
+      img {
+        width: 100%;
+      }
+    }
+    .product-remove {
+      width: 1px;
+      white-space: nowrap;
+      padding-right: 2rem;
+    }
+
+    .coupon {
+      float: left;
+      flex-direction: row;
+      align-items: center;
+      label {
+        display: none;
+      }
+    }
+
+    [name="update_cart"] {
+      float: right;
+      margin: 0;
+    }
+  }
+}

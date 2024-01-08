@@ -1,0 +1,129 @@
+:root {
+  /*
+  Global Colors
+  */
+
+  --h: 214;
+  --s: 100%;
+  --l: 36%;
+  --hsl: var(--h) var(--s) var(--l);
+
+  --hsl-dark: 222 14% 18%;
+  --hsl-white: 0 0% 100%;
+
+  --color-primary: hsl(var(--hsl));
+  --color-primary-dark: hsl(var(--h), var(--s), calc(var(--l) - 5%));
+  --color-surface: hsl(var(--hsl) / 0.05);
+
+  --color-danger: #f44336;
+  --color-success: #0f834d;
+
+  --color-dark: hsl(var(--hsl-dark));
+  --color-white: hsl(var(--hsl-white));
+  --color-white-muted: hsl(var(--hsl-white) / 0.5);
+
+  --color-text: hsl(var(--hsl-dark));
+  --color-text-muted: hsl(var(--hsl-dark) / 0.6);
+
+  --color-border: hsl(var(--hsl-dark) / 0.2);
+
+  /*
+  Typography
+  */
+  --ff-primary: "Inter", sans-serif;
+  --lh-none: 1;
+  --lh-xs: 1.1;
+  --lh-sm: 1.25;
+  --lh-md: 1.65;
+
+  //Generate --h variables from h6 to h2
+  $min: 1.125rem;
+  $max: 1.25rem;
+  $min-scale: 1.125;
+  $max-scale: 1.25;
+  $i: 6;
+  @while $i >= 2 {
+    --h#{$i}: #{clamp-smart($min, $max)};
+    $min: $min * $min-scale;
+    $max: $max * $max-scale;
+    $i: $i - 1;
+  }
+  --h1: #{clamp-smart(2.5rem, 4.5rem)};
+
+  --fs-xs: 0.75em;
+  --fs-sm: 0.875em;
+  --fs-lg: var(--h6);
+  --fs-xl: var(--h5);
+  --fs-2xl: var(--h4);
+
+  /*
+  Spacers
+  */
+  //generate spacers from absctract/_variables.scss $spacers
+  @each $name, $value in $spacers {
+    --spacer-#{$name}: #{$value};
+  }
+
+  /*
+  Transitions
+  */
+  --transition-duration: 300ms;
+  --transition-timing-function: ease;
+  --transition: var(--transition-duration) var(--transition-timing-function);
+
+  --animate-transition: 500ms ease;
+  --animate-distance: 1.5rem;
+
+  /*
+  Utilties
+  */
+  --border-width: 1px;
+  --shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.05);
+
+  /*
+  Elements
+  */
+  --header-height: #{clamp-smart(3.5rem, 4.5rem, 768px, 1900px)};
+
+  --container-width: 1300px;
+  --container-spacer: #{clamp-smart(1.125rem, 2.5rem)};
+
+  --link-color: var(--color-primary);
+  --link-color-hover: var(--color-primary-dark);
+
+  --input-border-color: var(--color-border);
+  --input-border-color-hover: hsl(var(--hsl-dark) / 0.4);
+  --input-border-color-focus: var(--color-primary);
+  --input-background-color: transparent;
+  --input-height: 3.25em;
+  --input-py: 0.75em;
+  --input-px: 1.4em;
+  --input-fs: inherit;
+  --input-choice-spacer: 0.3rem;
+
+  --button-text-color: var(--color-white);
+  --button-text-color-hover: var(--button-text-color);
+  --button-background-color: var(--color-primary);
+  --button-background-color-hover: var(--color-primary-dark);
+  --button-border-color: transparent;
+  --button-border-color-hover: transparent;
+  --button-height: var(--input-height);
+  --button-py: 0.25em;
+  --button-px: var(--input-px);
+  --button-fs: var(--input-fs);
+
+  --table-px: 0.5em;
+  --table-py: 0.7em;
+
+  --icon-color: currentColor;
+  --icon-background-color: var(--color-surface);
+  --icon-size: 1em;
+  --icon-holder-size: 2.125em;
+
+  --curtain-background-color: hsl(var(--hsl-dark) / 0.25);
+
+  --section-spacer: #{clamp-smart(2.5rem, 4.5rem)};
+
+  --element-spacer: #{clamp-smart(1rem, 1.125rem)};
+  --element-spacer-sm: calc(var(--element-spacer) / 2);
+}

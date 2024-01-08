@@ -1,0 +1,18 @@
+$themeColor: var(--color-primary);
+@import "swiper/scss";
+
+.swiper {
+  &--center &-wrapper {
+    align-items: center;
+  }
+  &-pagination {
+    text-align: center;
+    min-width: 4.5em;
+    user-select: none;
+  }
+
+  &-button-lock,
+  &-pagination-lock {
+    display: none;
+  }
+}

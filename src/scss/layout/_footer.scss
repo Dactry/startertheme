@@ -1,0 +1,27 @@
+.site-footer {
+  a:not([class]) {
+    display: inline-block;
+  }
+  .menu {
+    @include reset-list;
+    li {
+      margin-top: calc(var(--element-spacer) / 1.25);
+    }
+    a {
+      @include target-space;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1em;
+    }
+  }
+}
+
+.sticky-footer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .site-footer {
+    margin-top: auto;
+  }
+}

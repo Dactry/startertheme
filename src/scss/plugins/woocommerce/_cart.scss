@@ -1,0 +1,21 @@
+.wc-proceed-to-checkout {
+  &--custom {
+    bottom: var(--element-spacer);
+    order: 1;
+    position: sticky;
+    z-index: 10;
+  }
+  .button {
+    width: 100%;
+    font-size: 1.25em;
+  }
+}
+
+.custom-cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.cross-sells > h2 {
+  font-size: var(--h4);
+}

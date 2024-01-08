@@ -1,0 +1,147 @@
+.payment_methods {
+  &,
+  ul,
+  ol {
+    @include reset-list;
+  }
+}
+
+.place-order {
+  .button#place_order {
+    width: 100%;
+    font-size: 1.25em;
+  }
+}
+
+.payment_box {
+  font-size: var(--fs-sm);
+  padding: var(--spacer-2);
+  background-color: var(--color-surface);
+  > :first-child {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.woocommerce-form-login-toggle,
+.woocommerce-form-coupon-toggle {
+  overflow: hidden;
+}
+
+h3#ship-to-different-address {
+  font-size: 1.25em;
+  margin-top: var(--container-spacer);
+}
+
+ul#shipping_method li {
+  display: flex;
+  align-items: center;
+}
+
+form.woocommerce-checkout {
+  --form-spacer: var(--spacer-4);
+  #order_review_heading {
+    display: none;
+  }
+  #order_review {
+    border: calc(calc(var(--border-width) * 1)) solid var(--color-border);
+    padding: var(--form-spacer);
+  }
+  td.product-name {
+    position: relative;
+    height: calc(var(--table-py) * 2 + 3em);
+    padding-left: calc(var(--table-py) + 3em);
+    line-height: var(--lh-sm);
+  }
+  img.product_image {
+    position: absolute;
+    left: 0;
+    top: var(--table-py);
+    width: 3em;
+  }
+  tr.shipping {
+    > th {
+      display: block;
+      padding-bottom: 0;
+      padding-right: 0;
+    }
+    > td {
+      display: block;
+    }
+  }
+
+  td,
+  th {
+    &:last-child {
+      text-align: right;
+    }
+  }
+  @include bp(md) {
+    &:before,
+    &:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    #customer_details {
+      float: left;
+      width: 55%;
+    }
+
+    #order_review {
+      float: right;
+      width: 41%;
+    }
+  }
+
+  .col2-set {
+    .form-row-first {
+      float: left;
+      margin-right: 4%;
+    }
+
+    .form-row-last {
+      float: right;
+    }
+
+    .form-row-first,
+    .form-row-last {
+      width: 48%;
+    }
+
+    .form-row-wide {
+      clear: both;
+    }
+  }
+}
+
+.woocommerce-privacy-policy-text {
+  font-size: var(--fs-sm);
+}
+
+.woocommerce-terms-and-conditions-checkbox-text {
+  font-weight: bold;
+}
+
+.woocommerce-order {
+  .woocommerce-notice {
+    font-size: var(--h4);
+  }
+}
+
+.woocommerce-account-fields {
+  .form-row.create-account {
+    margin: 0;
+  }
+
+  div.create-account {
+    padding: var(--element-spacer);
+    background-color: var(--color-surface);
+  }
+  #account_username_field {
+    margin: 0;
+  }
+}
